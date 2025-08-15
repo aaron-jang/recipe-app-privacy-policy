@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나만의 레시피 - 개인정보처리방침</title>
+    <title>Privacy Policy - My Recipe App</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -19,6 +19,39 @@
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .language-selector {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .language-selector button {
+            background: #6366F1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .language-selector button:hover {
+            background: #4F46E5;
+        }
+        .language-selector button.active {
+            background: #4F46E5;
+            box-shadow: 0 2px 4px rgba(79, 70, 229, 0.3);
+        }
+        .language-content {
+            display: none;
+        }
+        .language-content.active {
+            display: block;
         }
         h1 {
             color: #6366F1;
@@ -49,109 +82,442 @@
         li {
             margin-bottom: 8px;
         }
+        .section {
+            margin-bottom: 25px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🍽️ 나만의 레시피 앱 개인정보처리방침</h1>
-        
-        <div class="highlight">
-            <strong>요약:</strong> 본 앱은 사용자의 개인정보를 수집하거나 저장하지 않습니다. 모든 데이터는 사용자의 기기에만 저장되며, 외부로 전송되지 않습니다.
+        <div class="language-selector">
+            <h3 style="margin-top: 0; color: #4F46E5;">🌐 Language / 언어 / 言語</h3>
+            <button onclick="showLanguage('ko')" id="btn-ko" class="active">한국어</button>
+            <button onclick="showLanguage('en')" id="btn-en">English</button>
+            <button onclick="showLanguage('ja')" id="btn-ja">日本語</button>
         </div>
 
-        <h2>1. 수집하는 개인정보</h2>
-        <ul>
-            <li><strong>본 앱은 개인정보를 수집하지 않습니다</strong></li>
-            <li>모든 레시피 데이터는 사용자 기기에만 저장됩니다</li>
-            <li>사용자 식별 정보, 연락처, 위치 정보 등을 수집하지 않습니다</li>
-        </ul>
+        <!-- 한국어 -->
+        <div id="content-ko" class="language-content active">
+            <h1>🍽️ 나만의 레시피 앱 개인정보처리방침</h1>
+            
+            <div class="highlight">
+                <strong>요약:</strong> 본 앱은 사용자의 개인정보를 수집하거나 저장하지 않습니다. 모든 데이터는 사용자의 기기에만 저장되며, 외부로 전송되지 않습니다.
+            </div>
 
-        <h2>2. 권한 사용 목적</h2>
-        <ul>
-            <li><strong>카메라 권한 (android.permission.CAMERA)</strong>
+            <div class="section">
+                <h2>1. 수집하는 개인정보</h2>
                 <ul>
-                    <li>목적: 레시피 사진을 직접 촬영하기 위해서만 사용</li>
-                    <li>저장: 촬영된 사진은 사용자 기기에만 저장</li>
-                    <li>전송: 촬영된 사진을 외부로 전송하지 않음</li>
+                    <li><strong>본 앱은 개인정보를 수집하지 않습니다</strong></li>
+                    <li>모든 레시피 데이터는 사용자 기기에만 저장됩니다</li>
+                    <li>사용자 식별 정보, 연락처, 위치 정보 등을 수집하지 않습니다</li>
                 </ul>
-            </li>
-            <li><strong>저장소 권한</strong>
+            </div>
+
+            <div class="section">
+                <h2>2. 권한 사용 목적</h2>
                 <ul>
-                    <li>목적: 레시피 사진을 기기에 저장하고 불러오기 위해서만 사용</li>
-                    <li>범위: 앱이 생성한 파일에만 접근</li>
+                    <li><strong>카메라 권한 (android.permission.CAMERA)</strong>
+                        <ul>
+                            <li>목적: 레시피 사진을 직접 촬영하기 위해서만 사용</li>
+                            <li>저장: 촬영된 사진은 사용자 기기에만 저장</li>
+                            <li>전송: 촬영된 사진을 외부로 전송하지 않음</li>
+                        </ul>
+                    </li>
+                    <li><strong>저장소 권한</strong>
+                        <ul>
+                            <li>목적: 레시피 사진을 기기에 저장하고 불러오기 위해서만 사용</li>
+                            <li>범위: 앱이 생성한 파일에만 접근</li>
+                        </ul>
+                    </li>
+                    <li><strong>인터넷 권한</strong>
+                        <ul>
+                            <li>목적: YouTube 영상 정보 가져오기 및 광고 표시</li>
+                            <li>개인정보: 사용자 레시피 데이터는 전송하지 않음</li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li><strong>인터넷 권한</strong>
+            </div>
+
+            <div class="section">
+                <h2>3. 데이터 보관 및 처리</h2>
                 <ul>
-                    <li>목적: YouTube 영상 정보 가져오기 및 광고 표시</li>
-                    <li>개인정보: 사용자 레시피 데이터는 전송하지 않음</li>
+                    <li>모든 레시피 데이터는 <strong>사용자 기기에만 저장</strong>됩니다</li>
+                    <li>외부 서버나 클라우드로 데이터를 전송하지 않습니다</li>
+                    <li>사용자가 앱을 삭제하면 모든 데이터가 함께 삭제됩니다</li>
+                    <li>앱 업데이트 시에도 기존 데이터는 보존됩니다</li>
                 </ul>
-            </li>
-        </ul>
+            </div>
 
-        <h2>3. 데이터 보관 및 처리</h2>
-        <ul>
-            <li>모든 레시피 데이터는 <strong>사용자 기기에만 저장</strong>됩니다</li>
-            <li>외부 서버나 클라우드로 데이터를 전송하지 않습니다</li>
-            <li>사용자가 앱을 삭제하면 모든 데이터가 함께 삭제됩니다</li>
-            <li>앱 업데이트 시에도 기존 데이터는 보존됩니다</li>
-        </ul>
-
-        <h2>4. 제3자 서비스</h2>
-        <ul>
-            <li><strong>Google AdMob</strong>
+            <div class="section">
+                <h2>4. 제3자 서비스</h2>
                 <ul>
-                    <li>광고 표시를 위해 사용됩니다</li>
-                    <li>광고 식별자(Advertising ID)를 사용할 수 있습니다</li>
-                    <li>사용자 레시피 데이터에는 접근하지 않습니다</li>
+                    <li><strong>Google AdMob</strong>
+                        <ul>
+                            <li>광고 표시를 위해 사용됩니다</li>
+                            <li>광고 식별자(Advertising ID)를 사용할 수 있습니다</li>
+                            <li>사용자 레시피 데이터에는 접근하지 않습니다</li>
+                        </ul>
+                    </li>
+                    <li><strong>YouTube API</strong>
+                        <ul>
+                            <li>YouTube 영상 정보 가져오기에만 사용됩니다</li>
+                            <li>사용자 개인정보를 YouTube에 전송하지 않습니다</li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li><strong>YouTube API</strong>
+            </div>
+
+            <div class="section">
+                <h2>5. 데이터 보안</h2>
                 <ul>
-                    <li>YouTube 영상 정보 가져오기에만 사용됩니다</li>
-                    <li>사용자 개인정보를 YouTube에 전송하지 않습니다</li>
+                    <li>모든 데이터는 사용자 기기에 암호화되어 저장됩니다</li>
+                    <li>네트워크를 통한 개인정보 전송이 없어 보안 위험이 최소화됩니다</li>
+                    <li>사용자가 직접 데이터를 관리하고 제어할 수 있습니다</li>
                 </ul>
-            </li>
-        </ul>
+            </div>
 
-        <h2>5. 데이터 보안</h2>
-        <ul>
-            <li>모든 데이터는 사용자 기기에 암호화되어 저장됩니다</li>
-            <li>네트워크를 통한 개인정보 전송이 없어 보안 위험이 최소화됩니다</li>
-            <li>사용자가 직접 데이터를 관리하고 제어할 수 있습니다</li>
-        </ul>
+            <div class="section">
+                <h2>6. 사용자 권리</h2>
+                <ul>
+                    <li>언제든지 앱 설정에서 권한을 철회할 수 있습니다</li>
+                    <li>앱 삭제를 통해 모든 데이터를 완전히 제거할 수 있습니다</li>
+                    <li>개인정보처리방침 관련 문의는 언제든지 가능합니다</li>
+                </ul>
+            </div>
 
-        <h2>6. 사용자 권리</h2>
-        <ul>
-            <li>언제든지 앱 설정에서 권한을 철회할 수 있습니다</li>
-            <li>앱 삭제를 통해 모든 데이터를 완전히 제거할 수 있습니다</li>
-            <li>개인정보처리방침 관련 문의는 언제든지 가능합니다</li>
-        </ul>
+            <div class="section">
+                <h2>7. 아동의 개인정보보호</h2>
+                <ul>
+                    <li>본 앱은 13세 미만 아동을 대상으로 하지 않습니다</li>
+                    <li>13세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다</li>
+                </ul>
+            </div>
 
-        <h2>7. 아동의 개인정보보호</h2>
-        <ul>
-            <li>본 앱은 13세 미만 아동을 대상으로 하지 않습니다</li>
-            <li>13세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다</li>
-        </ul>
+            <div class="section">
+                <h2>8. 개인정보처리방침 변경</h2>
+                <ul>
+                    <li>개인정보처리방침 변경 시 앱 업데이트를 통해 공지됩니다</li>
+                    <li>중요한 변경사항은 별도 알림을 제공합니다</li>
+                </ul>
+            </div>
 
-        <h2>8. 개인정보처리방침 변경</h2>
-        <ul>
-            <li>개인정보처리방침 변경 시 앱 업데이트를 통해 공지됩니다</li>
-            <li>중요한 변경사항은 별도 알림을 제공합니다</li>
-        </ul>
+            <div class="section">
+                <h2>9. 연락처</h2>
+                <ul>
+                    <li><strong>앱 이름:</strong> 나만의 레시피 (My Recipes)</li>
+                    <li><strong>개발자:</strong> Recipe App Developer</li>
+                    <li><strong>이메일:</strong> soosoolife.k@gmail.com</li>
+                    <li><strong>문의 응답:</strong> 평일 기준 48시간 이내 응답</li>
+                </ul>
+            </div>
 
-        <h2>9. 연락처</h2>
-        <ul>
-            <li><strong>앱 이름:</strong> 나만의 레시피 (My Recipes)</li>
-            <li><strong>개발자:</strong> Recipe App Developer</li>
-            <li><strong>이메일:</strong> soosoolife.k@gmail.com</li>
-            <li><strong>문의 응답:</strong> 평일 기준 48시간 이내 응답</li>
-        </ul>
+            <div class="date">
+                <strong>최종 수정일:</strong> 2025년 1월 15일<br>
+                <strong>시행일:</strong> 2025년 1월 15일
+            </div>
+        </div>
 
-        <div class="date">
-            <strong>최종 수정일:</strong> 2024년 7월 22일<br>
-            <strong>시행일:</strong> 2024년 7월 22일
+        <!-- English -->
+        <div id="content-en" class="language-content">
+            <h1>🍽️ My Recipe App Privacy Policy</h1>
+            
+            <div class="highlight">
+                <strong>Summary:</strong> This app does not collect or store any personal information from users. All data is stored only on the user's device and is not transmitted externally.
+            </div>
+
+            <div class="section">
+                <h2>1. Personal Information Collection</h2>
+                <ul>
+                    <li><strong>This app does not collect personal information</strong></li>
+                    <li>All recipe data is stored only on the user's device</li>
+                    <li>We do not collect user identification information, contacts, location data, etc.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. Permission Usage</h2>
+                <ul>
+                    <li><strong>Camera Permission (android.permission.CAMERA)</strong>
+                        <ul>
+                            <li>Purpose: Used only for taking recipe photos directly</li>
+                            <li>Storage: Photos are stored only on the user's device</li>
+                            <li>Transmission: Photos are not transmitted externally</li>
+                        </ul>
+                    </li>
+                    <li><strong>Storage Permission</strong>
+                        <ul>
+                            <li>Purpose: Used only for saving and loading recipe photos on the device</li>
+                            <li>Scope: Access only to files created by the app</li>
+                        </ul>
+                    </li>
+                    <li><strong>Internet Permission</strong>
+                        <ul>
+                            <li>Purpose: Retrieving YouTube video information and displaying ads</li>
+                            <li>Privacy: User recipe data is not transmitted</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. Data Storage and Processing</h2>
+                <ul>
+                    <li>All recipe data is <strong>stored only on the user's device</strong></li>
+                    <li>Data is not transmitted to external servers or cloud services</li>
+                    <li>All data is deleted when the user uninstalls the app</li>
+                    <li>Existing data is preserved during app updates</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Third-Party Services</h2>
+                <ul>
+                    <li><strong>Google AdMob</strong>
+                        <ul>
+                            <li>Used for displaying advertisements</li>
+                            <li>May use Advertising ID</li>
+                            <li>Does not access user recipe data</li>
+                        </ul>
+                    </li>
+                    <li><strong>YouTube API</strong>
+                        <ul>
+                            <li>Used only for retrieving YouTube video information</li>
+                            <li>Does not transmit user personal information to YouTube</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5. Data Security</h2>
+                <ul>
+                    <li>All data is stored encrypted on the user's device</li>
+                    <li>Security risks are minimized as no personal information is transmitted over the network</li>
+                    <li>Users can directly manage and control their data</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. User Rights</h2>
+                <ul>
+                    <li>Users can revoke permissions at any time in app settings</li>
+                    <li>All data can be completely removed by uninstalling the app</li>
+                    <li>Inquiries about the privacy policy are always welcome</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. Children's Privacy Protection</h2>
+                <ul>
+                    <li>This app is not intended for children under 13</li>
+                    <li>We do not intentionally collect personal information from children under 13</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>8. Privacy Policy Changes</h2>
+                <ul>
+                    <li>Changes to the privacy policy will be announced through app updates</li>
+                    <li>Important changes will be provided with separate notifications</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>9. Contact Information</h2>
+                <ul>
+                    <li><strong>App Name:</strong> My Recipe (나만의 레시피)</li>
+                    <li><strong>Developer:</strong> Recipe App Developer</li>
+                    <li><strong>Email:</strong> soosoolife.k@gmail.com</li>
+                    <li><strong>Response Time:</strong> Within 48 hours on business days</li>
+                </ul>
+            </div>
+
+            <div class="date">
+                <strong>Last Updated:</strong> January 15, 2025<br>
+                <strong>Effective Date:</strong> January 15, 2025
+            </div>
+        </div>
+
+        <!-- Japanese -->
+        <div id="content-ja" class="language-content">
+            <h1>🍽️ マイレシピアプリ プライバシーポリシー</h1>
+            
+            <div class="highlight">
+                <strong>概要:</strong> 本アプリはユーザーの個人情報を収集・保存いたしません。すべてのデータはユーザーの端末にのみ保存され、外部に送信されることはありません。
+            </div>
+
+            <div class="section">
+                <h2>1. 収集する個人情報</h2>
+                <ul>
+                    <li><strong>本アプリは個人情報を収集いたしません</strong></li>
+                    <li>すべてのレシピデータはユーザーの端末にのみ保存されます</li>
+                    <li>ユーザー識別情報、連絡先、位置情報等は収集いたしません</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. 権限の使用目的</h2>
+                <ul>
+                    <li><strong>カメラ権限 (android.permission.CAMERA)</strong>
+                        <ul>
+                            <li>目的: レシピの写真を直接撮影するためのみに使用</li>
+                            <li>保存: 撮影された写真はユーザーの端末にのみ保存</li>
+                            <li>送信: 撮影された写真を外部に送信いたしません</li>
+                        </ul>
+                    </li>
+                    <li><strong>ストレージ権限</strong>
+                        <ul>
+                            <li>目的: レシピの写真を端末に保存・読み込みするためのみに使用</li>
+                            <li>範囲: アプリが作成したファイルにのみアクセス</li>
+                        </ul>
+                    </li>
+                    <li><strong>インターネット権限</strong>
+                        <ul>
+                            <li>目的: YouTube動画情報の取得および広告表示</li>
+                            <li>個人情報: ユーザーのレシピデータは送信いたしません</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. データの保管及び処理</h2>
+                <ul>
+                    <li>すべてのレシピデータは<strong>ユーザーの端末にのみ保存</strong>されます</li>
+                    <li>外部サーバーやクラウドにデータを送信いたしません</li>
+                    <li>ユーザーがアプリを削除すると、すべてのデータも一緒に削除されます</li>
+                    <li>アプリ更新時も既存データは保持されます</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. 第三者サービス</h2>
+                <ul>
+                    <li><strong>Google AdMob</strong>
+                        <ul>
+                            <li>広告表示のために使用されます</li>
+                            <li>広告識別子（Advertising ID）を使用する場合があります</li>
+                            <li>ユーザーのレシピデータにはアクセスいたしません</li>
+                        </ul>
+                    </li>
+                    <li><strong>YouTube API</strong>
+                        <ul>
+                            <li>YouTube動画情報の取得のみに使用されます</li>
+                            <li>ユーザーの個人情報をYouTubeに送信いたしません</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5. データセキュリティ</h2>
+                <ul>
+                    <li>すべてのデータはユーザーの端末に暗号化されて保存されます</li>
+                    <li>ネットワークを通じた個人情報送信がないため、セキュリティリスクが最小化されます</li>
+                    <li>ユーザーが直接データを管理・制御できます</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. ユーザーの権利</h2>
+                <ul>
+                    <li>いつでもアプリ設定で権限を取り消すことができます</li>
+                    <li>アプリ削除によりすべてのデータを完全に削除できます</li>
+                    <li>プライバシーポリシーに関するお問い合わせはいつでも可能です</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. 児童の個人情報保護</h2>
+                <ul>
+                    <li>本アプリは13歳未満の児童を対象としておりません</li>
+                    <li>13歳未満の児童の個人情報を意図的に収集いたしません</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>8. プライバシーポリシーの変更</h2>
+                <ul>
+                    <li>プライバシーポリシー変更時はアプリ更新を通じてお知らせいたします</li>
+                    <li>重要な変更事項については別途通知を提供いたします</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>9. お問い合わせ</h2>
+                <ul>
+                    <li><strong>アプリ名:</strong> マイレシピ (My Recipe)</li>
+                    <li><strong>開発者:</strong> Recipe App Developer</li>
+                    <li><strong>メール:</strong> soosoolife.k@gmail.com</li>
+                    <li><strong>回答時間:</strong> 平日48時間以内に回答</li>
+                </ul>
+            </div>
+
+            <div class="date">
+                <strong>最終更新日:</strong> 2025年1月15日<br>
+                <strong>施行日:</strong> 2025年1月15日
+            </div>
         </div>
     </div>
+
+    <script>
+        function showLanguage(lang) {
+            // Validate language
+            const supportedLangs = ['ko', 'en', 'ja'];
+            if (!supportedLangs.includes(lang)) {
+                lang = 'ko'; // Default to Korean
+            }
+            
+            // Hide all content
+            document.querySelectorAll('.language-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.language-selector button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected language content
+            document.getElementById('content-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Update page title and meta language
+            const titles = {
+                'ko': '나만의 레시피 - 개인정보처리방침',
+                'en': 'My Recipe - Privacy Policy',
+                'ja': 'マイレシピ - プライバシーポリシー'
+            };
+            
+            document.title = titles[lang];
+            document.documentElement.lang = lang;
+            
+            // Update URL with query parameter (without page reload)
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            window.history.replaceState({}, '', url);
+        }
+        
+        function getLanguageFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const lang = urlParams.get('lang');
+            const supportedLangs = ['ko', 'en', 'ja'];
+            
+            // Return the language if supported, otherwise default to Korean
+            return supportedLangs.includes(lang) ? lang : 'ko';
+        }
+        
+        // Initialize with language from URL or default to Korean
+        document.addEventListener('DOMContentLoaded', function() {
+            const initialLang = getLanguageFromURL();
+            showLanguage(initialLang);
+        });
+        
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function() {
+            const lang = getLanguageFromURL();
+            showLanguage(lang);
+        });
+    </script>
 </body>
 </html>
